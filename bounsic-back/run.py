@@ -1,6 +1,11 @@
-from app import create_app
+from flask import Flask
 
-app = create_app()
+app = Flask(__name__)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+@app.route("/")
+def home():
+    return "Bienvenido a Bounsic Backend"
+
+if __name__ == "__main__":
+    app.run(host="localhost", port=5000, debug=True)
+
